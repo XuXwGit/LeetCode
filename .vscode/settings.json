@@ -1,0 +1,14 @@
+{
+    "cSpell.words": [
+        "LEETCODE"
+    ],
+    "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**",
+        "C:/MinGW/mingw64/include/**"
+    ],
+    "files.associations": {
+        "vector": "cpp",
+        "ratio": "cpp"
+    },
+}
