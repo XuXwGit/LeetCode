@@ -25,6 +25,7 @@
 using namespace std;
 
 int main() {
+	test_backtrack();
 	test_tree();
 	test_graph();
 	test_sort();
@@ -43,9 +44,6 @@ int main() {
 	test394();
 	test41();
 	test295();
-	test79();
-	test78();
-	test46();
 	test146();
 	test77();
 	test912();
