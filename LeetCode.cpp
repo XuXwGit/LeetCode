@@ -17,6 +17,7 @@
 #include "leetcode_binary_search.h"
 #include "leetcode_backtrack.h"
 #include "leetcode_dynamic_programming.h"
+#include "leetcode_double_pointer.h"
 #include "leetcode_prefixsum.h"
 #include "leetcode_graph.h"
 #include "leetcode_tree.h"
@@ -25,12 +26,16 @@
 using namespace std;
 
 int main() {
+	test_graph();
+	test_double_pointer();
 	test_backtrack();
 	test_tree();
-	test_graph();
 	test_sort();
-	test1590();
-	test304();
+	test_list();
+	test_stack();
+	test_binary_search();
+	test_dynamic_programming();
+	test_prefixsum();
 	test2009();
 	test300();
 	test2300();
@@ -44,11 +49,7 @@ int main() {
 	test394();
 	test41();
 	test295();
-	test146();
-	test77();
 	test912();
-	test138();
-	test25();
 	test207();
 	test189();
 	test76(); 

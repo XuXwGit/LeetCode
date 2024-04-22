@@ -3,9 +3,10 @@
 
 
 // Trie Tree/ Prefix Tree / Dictionary Tree
-#include "tree/LeetCode208.h"
-#include "tree/LeetCode211.h"
-#include "tree/LeetCode212.h"
+//用于高效存储和查询字符串
+#include "trie/LeetCode208.h"
+#include "trie/LeetCode211.h"
+#include "trie/LeetCode212.h"
 
 void test_tree(){
     // Trie Tree

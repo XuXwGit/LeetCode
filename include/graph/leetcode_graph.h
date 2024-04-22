@@ -8,6 +8,10 @@
 #include "dfs/LeetCode928.h"
 #include "dfs/LeetCode924.h"
 
+// Union Find
+#include "union_find/LeetCode130.h"
+#include "union_find/LeetCode684.h"
+
 // BFS
 
 // Topological Sort
@@ -24,6 +28,7 @@
 // Shortest Path (Floyd)
 #include "floyd/LeetCode1334.h"
 #include "floyd/LeetCode2976.h"
+#include "floyd/LeetCode399.h"
 
 // Minimum Spanning Tree 
 
@@ -36,12 +41,17 @@ void test_graph(){
     // floyd
     test1334();
     test2976();
+    test399();
 
     // dijkstra
     test1631();
     test743();
 
+    // union find
+    test684();
 
+    // dfs
+    test130();
 	test928();
 	test924();
     test944();

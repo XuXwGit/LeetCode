@@ -4,4 +4,9 @@
 #include "LeetCode84.h"
 #include "LeetCode394.h"
 
+void test_stack(){
+    test84();
+    test394();
+}
+
 #endif // !_LEETCODE_STACK_H_

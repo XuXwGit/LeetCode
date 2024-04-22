@@ -9,7 +9,7 @@
 #include <stack>
 #include <set>
 #include <list>
-
+#include <cstring>
 using namespace std;
 
 #endif // !_INCLUDE_STD_C___H_

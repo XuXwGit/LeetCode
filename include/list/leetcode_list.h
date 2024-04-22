@@ -6,4 +6,11 @@
 #include "LeetCode138.h"
 #include "LeetCode146.h"
 
+void test_list(){
+    test25();
+    test77();
+    test138();
+    test146();
+}
+
 #endif // !_LEETCODE_LIST_H_

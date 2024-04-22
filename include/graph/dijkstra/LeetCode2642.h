@@ -35,13 +35,17 @@ public:
                 return dis[node2] == INT_MAX?-1:dis[node2];
             }
 
-            auto [disx, curr] = pq.top();
+            int disx = pq.top().first;
+            int curr = pq.top().second;
+
             pq.pop();
             if(disx > dis[curr]){
                 continue;
             }
 
-            for(auto [x, cost]: graph[curr]){
+            for(auto edge: graph[curr]){
+                int x = edge.first;
+                int cost = edge.second;
                 if(dis[curr] + cost < dis[x]){
                     dis[x] = dis[curr] + cost;
                     pq.emplace(dis[x], x);
