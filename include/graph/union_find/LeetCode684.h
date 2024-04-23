@@ -25,8 +25,8 @@ public:
     vector<int> findRedundantConnection(vector<vector<int>>& edges) {
         set<int> nodes;
         for(auto& x: edges){
-            nodes.insert(x[0]);
-            nodes.insert(x[1]);
+            nodes.insert(x[0]-1);
+            nodes.insert(x[1]-1);
         }
 
         int n = nodes.size();
@@ -37,8 +37,8 @@ public:
         }
 
         for(auto x: edges){
-            int parent_a = find(x[0]);
-            int parent_b = find(x[1]);
+            int parent_a = find(x[0]-1);
+            int parent_b = find(x[1]-1);
             if(find(parent_a) != find(parent_b)){
                 parent[parent_b] = parent_a; 
             }else{

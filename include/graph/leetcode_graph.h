@@ -9,8 +9,10 @@
 #include "dfs/LeetCode924.h"
 
 // Union Find
+#include "union_find/LeetCode128.h"
 #include "union_find/LeetCode130.h"
 #include "union_find/LeetCode684.h"
+#include "union_find/LeetCode685.h"
 
 // BFS
 
@@ -48,7 +50,10 @@ void test_graph(){
     test743();
 
     // union find
+    test128();
+    test130();
     test684();
+    test685();
 
     // dfs
     test130();
