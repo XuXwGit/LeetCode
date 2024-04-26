@@ -42,11 +42,16 @@ public:
                 node1->next = node->next;
                 node = node->next;
                 node1 = node1->next;
+            }else{
+                break;
             }
             if(node->next){
                 node2->next = node->next;
                 node = node->next;
                 node2 = node2->next;
+            }else{
+                node2->next = nullptr;
+                break;
             }
         }
         node1->next = second;

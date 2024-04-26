@@ -26,14 +26,14 @@
 using namespace std;
 
 int main() {
+	test_binary_search();
+	test_tree();
 	test_list();
 	test_graph();
 	test_double_pointer();
 	test_backtrack();
-	test_tree();
 	test_sort();
 	test_stack();
-	test_binary_search();
 	test_dynamic_programming();
 	test_prefixsum();
 	test2009();

@@ -5,6 +5,7 @@
 #include "LeetCode77.h"
 #include "LeetCode138.h"
 #include "LeetCode146.h"
+#include "LeetCode206.h"
 #include "LeetCode328.h"
 #include "LeetCode2095.h"
 
@@ -13,6 +14,7 @@ void test_list(){
     test77();
     test138();
     test146();
+    test206();
     test328();
     test2095();
 }
