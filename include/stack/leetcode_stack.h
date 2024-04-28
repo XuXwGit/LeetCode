@@ -5,6 +5,7 @@
 #include "LeetCode394.h"
 
 void test_stack(){
+    cout << " ==== test stack ==== " << endl;
     test84();
     test394();
 }

@@ -1,6 +1,7 @@
 #ifndef _LEETCODE_BACKTRACK_H_
 #define _LEETCODE_BACKTRACK_H_
 
+#include "LeetCode17.h"
 #include "LeetCode36.h"
 #include "LeetCode37.h"
 #include "LeetCode39.h"
@@ -12,6 +13,8 @@
 
 
 void test_backtrack(){
+    cout << " ==== test backtrack ==== " << endl;
+    test17();
     test36();
     test37();
     test39();

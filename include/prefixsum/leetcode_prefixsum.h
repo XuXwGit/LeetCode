@@ -5,6 +5,7 @@
 #include "LeetCode1590.h"
 
 void test_prefixsum(){
+    cout << " ==== test prefixsum ==== " << endl;
     test304();
     test1590();
 }

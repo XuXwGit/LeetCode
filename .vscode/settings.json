@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
-        "LEETCODE"
+        "LEETCODE",
+        "prefixsum"
     ],
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.default.includePath": [

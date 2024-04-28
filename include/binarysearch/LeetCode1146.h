@@ -18,40 +18,37 @@ class SnapshotArray {
 private:
     int len;
     int count;
-    vector<int> curr;
     vector<vector<pair<int, int>>> snaps;
     int find(vector<pair<int, int>>& snap, int target){
-        int left = 0;
-        int right = snap.size()-1;
-        int mid = 0;
-        while(left < right){
-            mid = left + (right - left)/2;
-            if(snap[mid].first == target){
-                return snap[mid].second;
-            }else if(snap[mid].first < target){
-                left = mid + 1;
-            }else{
-                right = mid - 1;
-            }
-        }
-        return snap[left].first <= target? snap[left].second: snap[mid].second;
+        auto x = std::upper_bound(snap.begin(), snap.end(), pair<int, int>(target + 1, -1));
+        return x == snap.begin() ? 0 : prev(x)->second;
+
+        // following codes exit error
+        // int left = 0;
+        // int right = snap.size()-1;
+        // int mid = 0;
+        // while(left < right){
+        //     mid = left + (right - left)/2;
+        //     if(snap[mid].first == target){
+        //         return snap[mid].second;
+        //     }else if(snap[mid].first < target){
+        //         left = mid + 1;
+        //     }else{
+        //         right = mid - 1;
+        //     }
+        // }
+        // return snap[left].first <= target? snap[left].second: snap[mid].second;
     }
 public:
-    SnapshotArray(int length):len(length), count(0), curr(length, 0), snaps(length){
+    SnapshotArray(int length):len(length), count(0), snaps(length, vector<pair<int, int>>{}){
     }
     
     void set(int index, int val) {
-        curr[index] = val;
+        snaps[index].emplace_back(count, val);
     }
     
     int snap() {
-        for(int i = 0; i<len; ++i){
-            if(snaps[i].empty() || snaps[i].back().second != curr[i]){
-                snaps[i].emplace_back(count, curr[i]);
-            }
-        }
-        count ++;
-        return count - 1;
+        return count ++;
     }
     
     int get(int index, int snap_id) {

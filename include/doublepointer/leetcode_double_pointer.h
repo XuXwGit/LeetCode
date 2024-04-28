@@ -11,6 +11,7 @@ using namespace std;
 
 
 void test_double_pointer(){
+    cout << " ==== test double pointer ==== " << endl;
     test16();
     test18();
     test1052();

@@ -10,6 +10,7 @@
 #include "LeetCode2095.h"
 
 void test_list(){
+    cout << " ==== test list ==== " << endl;
     test25();
     test77();
     test138();

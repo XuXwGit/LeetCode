@@ -40,21 +40,26 @@
 
 
 void test_graph(){
+    cout << " ==== test graph ==== " << endl;
+    cout << " ==== floyd ==== " << endl;
     // floyd
     test1334();
     test2976();
     test399();
 
+    cout << " ==== dijkstra ==== " << endl;
     // dijkstra
     test1631();
     test743();
 
+    cout << " ==== union find ==== " << endl;
     // union find
     test128();
     test130();
     test684();
     test685();
 
+    cout << " ==== dfs ==== " << endl;
     // dfs
     test130();
 	test928();

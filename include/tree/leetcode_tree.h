@@ -3,8 +3,9 @@
 
 
 // binary tree
-#include "binary_tree/LeetCode2385.h"
 #include "binary_tree/LeetCode543.h"
+#include "binary_tree/LeetCode700.h"
+#include "binary_tree/LeetCode2385.h"
 
 
 // Trie Tree/ Prefix Tree / Dictionary Tree
@@ -17,8 +18,9 @@
 void test_tree(){
     // Binary Tree
     cout << "==== Binary Tree ====" << endl;
-    test2385();
+    test700();
     test543();
+    test2385();
 
     // Trie Tree
     cout << "==== Trie Tree ====" << endl;

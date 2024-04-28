@@ -47,8 +47,13 @@ void test_merge_sort(){
 template<typename T = int>
 void test_merge_sort(const vector<T>& temp){
     vector<T> nums = temp;
+    time_t start = clock();
     merge_sort(nums);
+    time_t end = clock();
     cout << "merge sort: " ;
+    cout << '\t';
+    cout << "time: " << (end - start) << "ms" << endl;
+    cout << '\t';
     for(auto num : nums){
         cout << num << " ";
     }

@@ -21,6 +21,7 @@
 
 
 void test_dynamic_programming(){
+    cout << " ==== test dynamic programming ==== " << endl;
     test198();
     test213();
     test377();

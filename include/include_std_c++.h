@@ -10,6 +10,9 @@
 #include <set>
 #include <list>
 #include <cstring>
+#include <string>
+#include <time.h>
+
 using namespace std;
 
 #endif // !_INCLUDE_STD_C___H_

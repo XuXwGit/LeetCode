@@ -50,11 +50,17 @@ void test_quick_sort(){
 template<typename T = int>
 void test_quick_sort(const vector<T>& temp){
     vector<T> nums = temp;
+    time_t start = clock();
     quick_sort(nums);
+    time_t end = clock();
     cout << "quick sort: " ;
+    cout << '\t';
+    cout << "time: " << (end - start) << "ms" << endl;
+    cout << '\t';
     for(auto num : nums){
         cout << num << " ";
     }
+
     cout << endl;
 }
 
