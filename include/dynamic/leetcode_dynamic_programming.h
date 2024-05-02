@@ -6,6 +6,8 @@
 #include "LeetCode213.h"
 
 // memory search
+// 2D dp
+#include "LeetCode44.h"
 
 // network dp
 
@@ -22,6 +24,7 @@
 
 void test_dynamic_programming(){
     cout << " ==== test dynamic programming ==== " << endl;
+    test44();
     test198();
     test213();
     test377();

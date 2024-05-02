@@ -7,6 +7,7 @@
 #include "leetcode_double_pointer.h"
 #include "leetcode_prefixsum.h"
 #include "leetcode_graph.h"
+#include "leetcode_greedy.h"
 #include "leetcode_tree.h"
 #include "leetcode_math.h"
 #include "test_sort.h"
@@ -27,16 +28,17 @@
 
 using namespace std;
 int main() {
+	test_dynamic_programming();
+	test_greedy();
 	test_math();
 	test_sort();
 	test_binary_search();
 	test_tree();
 	test_list();
-	test_graph();
+	test_graph(); 
 	test_double_pointer();
 	test_backtrack();
 	test_stack();
-	test_dynamic_programming();
 	test_prefixsum();
 	test2009();
 	test300();

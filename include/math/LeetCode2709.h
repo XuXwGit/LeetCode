@@ -18,6 +18,9 @@ class Solution2709 {
 private:
     unordered_map<int, int> parent;
     int find(int x){
+        if(parent[x] == 0){
+            parent[x] = x;
+        }
         if(parent[x] != x){
             parent[x] = find(parent[x]);
         }
@@ -36,29 +39,30 @@ private:
 public:
     bool canTraverseAllPairs(vector<int>& nums){
         for(int i = 0; i<nums.size(); ++i){
-            cout << nums[i] << endl;
-        }
-
-        for(int i = 0; i<nums.size(); ++i){
+            set<int> facs;
             for(int j = 2; j <= nums[i]/j; ++j){
                 if(nums[i]%j == 0){
                     connect(i, j);
-                    printf("i=%d, j=%d\n", i, j);
+                    facs.insert(j);
                     while(nums[i]%j == 0){
                         nums[i] /= j;
                     }
                 }
             }
-
             if(nums[i] > 1){
                 connect(i, nums[i]);
-                printf("i=%d, j=%d\n", i, nums[i]);
+                facs.insert(nums[i]);
+            }
+            for(int x: facs){
+                for(int y: facs){
+                    connect(x, y);
+                }
             }
         }
 
         for(int i = 0; i<nums.size(); ++i){
             for(int j = i+1; j < nums.size(); ++j){
-                cout << "i=" << i << ", j=" << j  << "isConnected=" << isConnected(i, j) << endl;
+                cout << i<< "(" << find(i) << ")" << " " << j << "(" << find(j) << ")" << endl;
                 if(!isConnected(i, j)){
                     return false;
                 }
@@ -76,7 +80,7 @@ void test2709(){
     vector<int> nums = {3, 9, 5};
     cout << (solution.canTraverseAllPairs(nums) ? "true" : "false") << endl;
     // [2,6,7,4]
-    nums = {2, 6, 7, 4};
+    nums = {21,88,75};
     cout << (solution.canTraverseAllPairs(nums) ? "true" : "false") << endl;
 }
 

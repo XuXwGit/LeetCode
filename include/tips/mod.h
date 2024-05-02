@@ -14,36 +14,36 @@ T add(T x, T y){
 
 template<typename T>
 T add(T x, T y, T m){
-    x % m;
-    y % m;
+    x %= m;
+    y %= m;
     return (x + y)%m;
 }
 
 template<typename T>
 T sub(T x, T y){
-    x % MOD;
-    y % MOD;
+    x %= MOD;
+    y %= MOD;
     return (x - y + MOD)%MOD;
 }
 
 template<typename T>
 T sub(T x, T y, T m){
-    x % m;
-    y % m;
+    x %= m;
+    y %= m;
     return (x - y + m)%m;
 }
 
 template<typename T>
 T mul(T x, T y){
-    x % MOD;
-    y % MOD;
+    x %= MOD;
+    y %= MOD;
     return (x*y)%MOD;
 }
 
 template<typename T>
 T mul(T x, T y, T m){
-    x % m;
-    y % m;
+    x %= m;
+    y %= m;
     return (x*y)%m;
 }
 
