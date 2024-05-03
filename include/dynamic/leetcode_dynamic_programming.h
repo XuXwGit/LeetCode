@@ -7,7 +7,11 @@
 
 // memory search
 // 2D dp
+#include "LeetCode10.h"
 #include "LeetCode44.h"
+#include "LeetCode72.h" //same with 712 / 583
+#include "LeetCode583.h"//same with 72 / 712
+#include "LeetCode712.h"//same with 72 / 583
 
 // network dp
 
@@ -24,7 +28,11 @@
 
 void test_dynamic_programming(){
     cout << " ==== test dynamic programming ==== " << endl;
+    test10();
     test44();
+    test72();
+    test583();
+    test712();
     test198();
     test213();
     test377();
