@@ -6,12 +6,16 @@
 #include "LeetCode213.h"
 
 // memory search
+// 1D dp
+#include "LeetCode1235.h"
+#include "LeetCode2008.h"
 // 2D dp
 #include "LeetCode10.h"
 #include "LeetCode44.h"
 #include "LeetCode72.h" //same with 712 / 583
 #include "LeetCode583.h"//same with 72 / 712
 #include "LeetCode712.h"//same with 72 / 583
+#include "LeetCode1751.h" // same as 1235
 
 // network dp
 
@@ -28,6 +32,9 @@
 
 void test_dynamic_programming(){
     cout << " ==== test dynamic programming ==== " << endl;
+    test2008();
+    test1235();
+    test1751();
     test10();
     test44();
     test72();
