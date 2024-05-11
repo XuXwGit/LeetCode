@@ -44,7 +44,7 @@ public:
                             if(jj1 >= 0 && jj1 < cols
                             && jj2 >= 0 && jj2 < cols 
                             && dp[i - 1][jj1][jj2] != -1){
-                                if(jj1 != jj2){
+                                if(j1 != j2){
                                     best =
                                         max(best, dp[i - 1][jj1][jj2] +
                                                             grid[i][j1] +

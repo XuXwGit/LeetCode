@@ -7,80 +7,68 @@
 
 using namespace std;
 
-struct DoubleLinkNode {
-  int val;
-  DoubleLinkNode* prev;
-  DoubleLinkNode* next;
-  DoubleLinkNode() : val(0), prev(nullptr), next(nullptr) {}
-  DoubleLinkNode(int value) : val(value), prev(nullptr), next(nullptr) {}
-};
-
 class LRUCache {
- private:
-  int capacity;
-  int num_nodes;
-  unordered_map<int, DoubleLinkNode*> map;
-  DoubleLinkNode* head;
-  DoubleLinkNode* tail;
+private:
+    struct DoubleListNode{
+        int val;
+        int key;
+        DoubleListNode* pre;
+        DoubleListNode* next;
+        DoubleListNode():pre(nullptr), next(nullptr){}
+        DoubleListNode(int key, int value):key(key), val(value),pre(nullptr), next(nullptr){}
+    };
+    DoubleListNode* head;
+    DoubleListNode* tail;
+    int capacity;
+    map<int, DoubleListNode*> caches;
+    void moveToHead(DoubleListNode* node){
+        if(node == head->next){
+            return;
+        }
 
-  void removeNode(DoubleLinkNode* node) {
-    node->prev->next = node->next;
-    node->next->prev = node->prev;
-  }
-
-  DoubleLinkNode* moveToHead(DoubleLinkNode* node) {
-    removeNode(node);
-    return addToHead(node);
-  }
-
-  DoubleLinkNode* addToHead(DoubleLinkNode* node) {
-    head->next->prev = node;
-    node->next = head->next;
-    head->next = node;
-    node->prev = head;
-    return node;
-  }
-
-  DoubleLinkNode* removeTail() {
-    removeNode(tail->prev);
-    return tail;
-  }
-
- public:
-  LRUCache(int capacity) : capacity(capacity), num_nodes(0) {
-    head = new DoubleLinkNode();
-    tail = new DoubleLinkNode();
-
-    head->next = tail;
-    tail->prev = head;
-  }
-
-  int get(int key) {
-    if (map.find(key) != map.end()) {
-      return moveToHead(map[key])->val;
-    } else {
-      return -1;
+        removeNode(node);
+        insertNode(node);
     }
-  }
-
-  void put(int key, int value) {
-    if (map.find(key) != map.end()) {
-      map[key]->val = value;
-      moveToHead(map[key]);
-      return;
-    } else {
-      DoubleLinkNode* new_node = new DoubleLinkNode(value);
-      map[key] = new_node;
-      addToHead(new_node);
-      if (num_nodes < capacity) {
-        num_nodes++;
-      } else {
-        // delete tail node
-        removeTail();
-      }
-      return;
+    DoubleListNode* removeNode(DoubleListNode* node){
+        node->next->pre = node->pre;
+        node->pre->next = node->next;
+        return node;
     }
-  }
+    void insertNode(DoubleListNode* node){
+        node->next = head->next;
+        node->pre = head;
+        node->next->pre = node;
+        head->next = node;
+    }
+public:
+    LRUCache(int capacity):capacity(capacity), head(new DoubleListNode()), tail(new DoubleListNode()){
+        head->next = tail;
+        tail->pre = head;
+    }
+    
+    int get(int key) {
+        if(caches.count(key)){
+            moveToHead(caches[key]);
+            return (caches[key])->val;
+        }else{
+            return -1;
+        }
+    }
+    
+    void put(int key, int value) {
+        if(caches.count(key)){
+            caches[key]->val = value;
+            moveToHead(caches[key]);
+        }else{
+            DoubleListNode* node = new DoubleListNode(key,value);
+            insertNode(node);
+            caches[key] = node;
+            if(caches.size() > capacity){
+                DoubleListNode* temp = removeNode(tail->pre);
+                caches.erase(temp->key);
+            }
+        }
+    }
 };
 
 /**
