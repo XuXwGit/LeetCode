@@ -2,6 +2,7 @@
 #define _LEETCODE_DYNAMIC_PROGRAMMING_H
 
 // easy
+#include "LeetCode53.h"
 #include "LeetCode198.h"
 #include "LeetCode213.h"
 
@@ -50,6 +51,7 @@ void test_dynamic_programming(){
     test1751();
     test10();
     test44();
+    test53();
     test72();
     test120();
     test583();

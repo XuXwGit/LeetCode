@@ -3,7 +3,7 @@
 
 // DFS
 #include "dfs/LeetCode200.h"
-#include "dfs/LeetCode944.h"
+#include "dfs/LeetCode994.h"
 #include "dfs/LeetCode1971.h"
 #include "dfs/LeetCode928.h"
 #include "dfs/LeetCode924.h"
@@ -64,7 +64,7 @@ void test_graph(){
     test130();
 	test928();
 	test924();
-    test944();
+    test994();
     test1971();
     test200();
 }

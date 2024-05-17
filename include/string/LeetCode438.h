@@ -78,4 +78,16 @@ public:
 };
 
 
+void test438() {
+    Solution438 sol;
+
+    string s = "cbaebabacd";
+    string p = "abc";
+    vector<int> res = sol.findAnagrams(s, p);
+    for (const int& x : res) {
+        cout << x << " ";
+    }
+    cout << endl;
+}
+
 #endif // !_LEETCODE_438_

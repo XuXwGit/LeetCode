@@ -16,6 +16,48 @@
 
 using namespace std;
 
+#ifdef HEAD_VERSION
+
+class Solution743 {
+public:
+    int networkDelayTime(vector<vector<int>>& times, int n, int k) {
+        map<int, vector<pair<int, int>>> graph;
+        for(auto& x: times){
+            graph[x[0]].emplace_back(x[1], x[2]);
+        }
+
+        vector<int> distance(n+1, INT_MAX/2);
+        distance[0] = 0;
+        distance[k] = 0;
+        priority_queue<pair<int, int>> pq;
+        pq.emplace(0, k);
+        while(!pq.empty()){
+            auto [dis, x] = pq.top();
+            pq.pop();
+
+            if(dis > distance[x]){
+                continue;
+            }
+
+            for(auto [y, len]: graph[x]){
+                if(distance[y] > distance[x] + len){
+                    distance[y] = distance[x] + len;
+                    pq.emplace(distance[y], y);
+                }
+            }
+        }
+
+        int max_dis = *(max_element(distance.begin(), distance.end()));
+        if(max_dis == INT_MAX/2){
+            return -1;
+        }else{
+            return max_dis;
+        }
+    }
+};
+
+#else
+
 class Solution743 {
 public:
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {
@@ -66,5 +108,7 @@ void test743(){
     k = 2;
     cout << solution.networkDelayTime(times, n, k) << endl;
 }
+
+#endif // HEAD_VERSION
 
 #endif // _LEETCODE_743_H_
