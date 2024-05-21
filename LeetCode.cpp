@@ -14,6 +14,7 @@
 #include "leetcode_tree.h"
 #include "leetcode_math.h"
 #include "test_sort.h"
+#include "examination.h"
 #include "LeetCode76.h"
 #include "LeetCode239.h"
 #include "LeetCode438.h"
@@ -31,6 +32,8 @@
 
 using namespace std;
 int main() {
+	test_sort();
+	test_examination();
 	test_strings();
 	test_graph(); 
 	test_dynamic_programming();
@@ -39,7 +42,6 @@ int main() {
 	test_sliding_windows();
 	test_greedy();
 	test_math();
-	test_sort();
 	test_search();
 	test_binary_search();
 	test_tree();

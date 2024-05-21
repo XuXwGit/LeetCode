@@ -11,7 +11,7 @@ candidates 中的每个数字在每个组合中只能使用 一次 。
 #define _BACKTRACK_LEETCODE40_H_
 
 
-class Solution {
+class Solution40 {
 private:
     void backtrack(vector<int>& candidates, int target, int level, vector<int>& sol, vector<vector<int>>& res){
         if(target < 0 ){
@@ -48,7 +48,7 @@ public:
 };
 
 void test40(){
-    Solution s;
+    Solution40 s;
     vector<int> candidates = {10,1,2,7,6,1,5};
     int target = 8;
     vector<vector<int>> res = s.combinationSum2(candidates, target);

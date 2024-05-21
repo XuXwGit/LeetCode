@@ -5,9 +5,12 @@
 #include "quick_sort.h"
 #include "merge_sort.h"
 #include "heap_sort.h"
+#include "leetcode_sort.h"
 
 void test_sort(){
     cout << " ==== test sort ==== " << endl;
+
+    test_leetcode_sort();
 
     srand((unsigned)time(NULL));
     int n = 20;
