@@ -19,7 +19,6 @@
 #include "LeetCode239.h"
 #include "LeetCode438.h"
 #include "LeetCode189.h"
-#include "LeetCode207.h"
 #include "LeetCode295.h"
 #include "LeetCode41.h"
 #include "LeetCode54.h"
@@ -31,15 +30,16 @@
 #include "LeetCode2009.h"
 
 using namespace std;
-int main() {
-	test_sort();
+int main()
+{
 	test_examination();
+	test_sliding_windows();
+	test_sort();
 	test_strings();
 	test_graph(); 
 	test_dynamic_programming();
 	test_list();
 	test_backtrack();
-	test_sliding_windows();
 	test_greedy();
 	test_math();
 	test_search();
@@ -62,9 +62,7 @@ int main() {
 	test41();
 	test295();
 	test912();
-	test207();
 	test189();
 	test76(); 
 	return 0;
-	}
-
+}

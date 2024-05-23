@@ -39,10 +39,13 @@ public:
                     min_index = i;
                 }
             }
+            if (min_index != -1)
+            {
                 node->next = ll[min_index];
                 node = node->next;
                 ll[min_index] = ll[min_index]->next;
             }
+        }
         return head->next;
     }
 };

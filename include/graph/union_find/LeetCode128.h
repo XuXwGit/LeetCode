@@ -16,61 +16,63 @@
 
 class Solution128 {
 private:
-    vector<int> parent;
-    int find(int x){
-        if(parent[x] != x){
-            parent[x] = find(parent[x]);
+    vector<int> parents;
+    vector<int> counts;
+
+    int find(int x)
+    {
+        if (parents[x] != x)
+        {
+            parents[x] = find(parents[x]);
         }
-        return parent[x];
+
+        return parents[x];
     }
-    void merge(int x, int y){
+    void unionSet(int x, int y)
+    {
         int p_x = find(x);
         int p_y = find(y);
-        if(p_x != p_y){
-            parent[p_x] = p_y;
+        if (p_x != p_y)
+        {
+            parents[p_y] = p_x;
+            counts[p_x] += counts[p_y];
         }
     }
+
 public:
-    int longestConsecutive(vector<int>& nums) {
-        parent = vector<int>(nums.size());
-        
-        for(int i = 0; i<nums.size(); ++i){
-            parent[i] = i;
+    int longestConsecutive(vector<int> &nums)
+    {
+        if (nums.size() == 0)
+        {
+            return 0;
         }
 
-        map<int, int> numsmap;
-        map<int, int> count;
-        for(int i = 0; i<nums.size(); ++i){
-            int x = nums[i];
-            if(numsmap.count(x)){
-                continue;
-            }
-            if(numsmap.count(x - 1)){
-                merge(i, numsmap[x-1]);
-            }
-            if(numsmap.count(x + 1)){
-                merge(i, numsmap[x + 1]);
-            }
-            numsmap[x] = i;
-            count[i] = 1;
+        int n = nums.size();
+        parents = vector<int>(n);
+        counts = vector<int>(n, 1);
+
+        for (int i = 0; i < n; ++i)
+        {
+            parents[i] = i;
         }
 
-        
-        for(auto x: numsmap){
-            if(find(x.second) != x.second){
-                count[find(x.second)] ++;
+        unordered_map<int, int> maps;
+        for (int i = 0; i < n; ++i)
+        {
+            maps.emplace(nums[i], i);
+        }
+
+        for (auto [x, i] : maps)
+        {
+            if (maps.count(x - 1))
+            {
+                unionSet(i, maps[x - 1]);
             }
         }
 
-        int maxlen = 0;
-        for(auto x: count){
-            maxlen = max(maxlen, x.second );
-        }
-
-        return maxlen;
+        return *(max_element(counts.begin(), counts.end()));
     }
 };
-
 
 void test128(){
     Solution128 s;

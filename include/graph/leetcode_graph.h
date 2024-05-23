@@ -8,6 +8,9 @@
 #include "dfs/LeetCode928.h"
 #include "dfs/LeetCode924.h"
 
+// BFS
+#include "bfs/LeetCode207.h"
+
 // Union Find
 #include "union_find/LeetCode128.h"
 #include "union_find/LeetCode130.h"
@@ -17,6 +20,8 @@
 // BFS
 
 // Topological Sort
+#include "bfs/LeetCode207.h"
+#include "bfs/LeetCode210.h"
 
 // Shortest Path Problem : Dijkstra V\S Floyd
 // Dijkstra can only handle "positive weight" edges and "single source" shortest path
@@ -26,6 +31,7 @@
 #include "dijkstra/LeetCode2642.h"
 #include "dijkstra/LeetCode1514.h"
 #include "dijkstra/LeetCode1631.h"
+#include "dijkstra/LeetCode3112.h"
 
 // Shortest Path (Floyd)
 #include "floyd/LeetCode1334.h"
@@ -51,6 +57,9 @@ void test_graph(){
     // dijkstra
     test1631();
     test743();
+    test2642();
+    test1514();
+    test3112();
 
     cout << " ==== union find ==== " << endl;
     // union find
@@ -67,6 +76,11 @@ void test_graph(){
     test994();
     test1971();
     test200();
+
+    cout << " ==== bfs ==== " << endl;
+    cout << " ==== topological sort ==== " << endl;
+    test207();
+    test210();
 }
 
 
