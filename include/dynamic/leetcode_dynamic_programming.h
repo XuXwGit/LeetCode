@@ -19,6 +19,8 @@
 #include "LeetCode72.h" //same with 712 / 583
 #include "LeetCode583.h"//same with 72 / 712
 #include "LeetCode712.h"//same with 72 / 583
+#include "LeetCode718.h" // Huawei
+#include "LeetCode1143.h"
 #include "LeetCode1751.h" // same as 1235
 // 3D dp
 #include "LeetCode741.h"
@@ -49,13 +51,16 @@ void test_dynamic_programming(){
     test2054();
     test1235();
     test1751();
-    test10();
+
+        test10();
     test44();
     test53();
     test72();
     test120();
     test583();
     test712();
+    test718();
+    test1143();
     test198();
     test213();
     test377();

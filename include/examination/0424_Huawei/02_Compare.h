@@ -86,8 +86,6 @@ void test_0424_02(){
         cout << x.id << " ";
     }
     cout << endl;
-
-    return 0;
 }
 
 

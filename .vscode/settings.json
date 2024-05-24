@@ -16,6 +16,7 @@
         "list": "cpp",
         "string_view": "cpp",
         "unordered_set": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "iterator": "cpp"
     },
 }
