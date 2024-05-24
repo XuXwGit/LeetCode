@@ -49,6 +49,27 @@ private:
     unordered_map<int, vector<pair<int, int>>> graph;
     void dijkstra(int origin, vector<int> &distance)
     {
+        distance[origin] = 0;
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+        while (!pq.empty())
+        {
+            auto [x, idx] = pq.top();
+            pq.pop();
+
+            if (x > distance[idx])
+            {
+                continue;
+            }
+
+            for (auto [y, cost] : graph[idx])
+            {
+                if (distance[y] > distance[idx] + cost)
+                {
+                    distance[y] = distance[idx] + cost;
+                    pq.emplace(distance[y], y);
+                }
+            }
+        }
     }
 
 public:
@@ -114,6 +135,17 @@ public:
                 }
             }
         }
+
+        // dijkstra
+        int res = INT_MAX;
+        for (auto &checkPoint : checkPoints)
+        {
+            vector<int> distance(n * m, INT_MAX / 2);
+            dijkstra(checkPoint, distance);
+            res = min(res, distance[start] + distance[end]);
+        }
+
+        return res;
     }
 };
 
