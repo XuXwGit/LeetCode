@@ -126,8 +126,6 @@ void test_0320_03()
             break;
         }
     }
-
-    return 0;
 }
 
 #endif // !_EXAMINATION_HUAWEI_0320_03_H_

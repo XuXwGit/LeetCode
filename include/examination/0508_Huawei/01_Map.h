@@ -111,8 +111,6 @@ void test_0508_01(){
             maps[dst] = floor((1.0 * resolve(src0)) / resolve(src1));
         }
     }
-
-    return 0;
 }
 
 

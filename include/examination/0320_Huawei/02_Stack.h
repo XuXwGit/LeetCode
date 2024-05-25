@@ -73,6 +73,7 @@ void solution_HW_0320_02(vector<int> &nums)
         }
         cout << endl;
     }
+}
 
     void test_0320_02()
     {

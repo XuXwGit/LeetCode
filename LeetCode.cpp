@@ -32,11 +32,11 @@
 using namespace std;
 int main()
 {
+	test_graph();
 	test_examination();
 	test_sliding_windows();
 	test_sort();
 	test_strings();
-	test_graph(); 
 	test_dynamic_programming();
 	test_list();
 	test_backtrack();
