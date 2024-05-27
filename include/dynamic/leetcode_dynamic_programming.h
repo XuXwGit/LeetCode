@@ -22,12 +22,16 @@
 #include "LeetCode718.h" // Huawei
 #include "LeetCode1143.h"
 #include "LeetCode1751.h" // same as 1235
+
 // 3D dp
-#include "LeetCode741.h"
-#include "LeetCode1463.h" // extension of 741
+#include "grid/LeetCode741.h"
+#include "grid/LeetCode1463.h" // extension of 741
 
 // sale stock problem
-#include "LeetCode714.h"
+#include "stock/LeetCode121.h"
+#include "stock/LeetCode122.h"
+#include "stock/LeetCode188.h"
+#include "stock/LeetCode714.h"
 
 // network dp
 
@@ -44,7 +48,12 @@
 
 void test_dynamic_programming(){
     cout << " ==== test dynamic programming ==== " << endl;
+    cout << " ==== sale stock problem ====" << endl;
+    test121();
+    test122();
+    test188();
     test741();
+
     test1463();
     test2008();
     test2830();
@@ -52,7 +61,7 @@ void test_dynamic_programming(){
     test1235();
     test1751();
 
-        test10();
+    test10();
     test44();
     test53();
     test72();

@@ -12,30 +12,58 @@
 返回获得利润的最大值。
 
 注意：这里的一笔交易指买入持有并卖出股票的整个过程，每笔交易你只需要为支付一次手续费。
+
+
+
+示例 1：
+
+输入：prices = [1, 3, 2, 8, 4, 9], fee = 2
+输出：8
+解释：能够达到的最大利润:
+在此处买入 prices[0] = 1
+在此处卖出 prices[3] = 8
+在此处买入 prices[4] = 4
+在此处卖出 prices[5] = 9
+总利润: ((8 - 1) - 2) + ((9 - 4) - 2) = 8
+示例 2：
+
+输入：prices = [1,3,7,5,10,3], fee = 3
+输出：6
+
+
+提示：
+
+1 <= prices.length <= 5 * 104
+1 <= prices[i] < 5 * 104
+0 <= fee < 5 * 104
 */
 
 #ifndef _DP_LEETCODE714_H
 #define _DP_LEETCODE714_H
 
-class Solution714 {
+class Solution714
+{
 public:
-    int maxProfit(vector<int>& prices, int fee) {
+    int maxProfit(vector<int> &prices, int fee)
+    {
         int n = prices.size();
-        vector<vector<int>> dp(n , vector<int>(2, 0));
 
-        dp[0][0] = 0;
-        dp[0][1] = -prices[0];
-        for(int i = 1; i<n; ++i){
-            dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i] - fee);
-            dp[i][1] = max(dp[i-1][1], dp[i-1][0] - prices[i]);
+        vector<int> dp0(n, 0);
+        vector<int> dp1(n, 0);
+
+        dp1[0] = -prices[0];
+        for (int i = 1; i < n; ++i)
+        {
+            dp0[i] = max(dp0[i - 1], dp1[i - 1] + prices[i] - fee);
+            dp1[i] = max(dp1[i - 1], dp0[i - 1] - prices[i]);
         }
 
-        return dp.back()[0];
+        return dp0[n - 1];
     }
 };
 
-
-void test714(){
+void test714()
+{
     Solution714 sol;
     vector<int> prices = {1, 3, 2, 8, 4, 9};
     int fee = 2;

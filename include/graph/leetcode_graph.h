@@ -1,6 +1,8 @@
 #ifndef _LEETCODE_GRAPH_H_
 #define _LEETCODE_GRAPH_H_
 
+#include "include_std_c++.h"
+
 // DFS
 #include "dfs/LeetCode200.h"
 #include "dfs/LeetCode797.h"
@@ -9,11 +11,14 @@
 #include "dfs/LeetCode928.h"
 #include "dfs/LeetCode994.h"
 #include "dfs/LeetCode1971.h"
+#include "dfs/LeetCode2192.h"
 
 // BFS
 // Topological Sort
 #include "bfs/LeetCode207.h"
 #include "bfs/LeetCode210.h"
+#include "bfs/LeetCode924.h"
+#include "bfs/LeetCode2101.h"
 
 // Union Find
 #include "union_find/LeetCode128.h"
@@ -21,7 +26,9 @@
 #include "union_find/LeetCode547.h"
 #include "union_find/LeetCode684.h"
 #include "union_find/LeetCode685.h"
+#include "union_find/LeetCode924.h"
 #include "union_find/LeetCode2316.h"
+#include "union_find/LeetCode2685.h"
 
 // Shortest Path Problem : Dijkstra V\S Floyd
 // Dijkstra can only handle "positive weight" edges and "single source" shortest path
@@ -37,6 +44,9 @@
 #include "floyd/LeetCode1334.h"
 #include "floyd/LeetCode2976.h"
 #include "floyd/LeetCode399.h"
+
+// Pseudotree
+#include "pseudotree/LeetCode2127.h"
 
 // Minimum Spanning Tree 
 
@@ -68,7 +78,9 @@ void test_graph(){
     test547();
     test684();
     test685();
+    test924UFS();
     test2316();
+    test2685();
 
     cout << " ==== dfs ==== " << endl;
     // dfs
@@ -78,11 +90,17 @@ void test_graph(){
 	test924();
     test994();
     test1971();
+    test2192();
 
     cout << " ==== bfs ==== " << endl;
+    test924BFS();
+    test2101();
     cout << " ==== topological sort ==== " << endl;
     test207();
     test210();
+
+    cout << " ==== pseudotree ==== " << endl;
+    test2127();
 }
 
 

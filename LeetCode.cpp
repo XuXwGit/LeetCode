@@ -32,12 +32,12 @@
 using namespace std;
 int main()
 {
+	test_dynamic_programming();
 	test_graph();
 	test_examination();
 	test_sliding_windows();
 	test_sort();
 	test_strings();
-	test_dynamic_programming();
 	test_list();
 	test_backtrack();
 	test_greedy();

@@ -92,4 +92,17 @@ public:
     }
 };
 
+void test1319()
+{
+    Solution1319 solution1319;
+    vector<vector<int>> connections = {{0, 1}, {0, 2}, {1, 2}};
+    cout << solution1319.makeConnected(4, connections) << endl;
+    connections = {{0, 1}, {0, 2}, {0, 3}, {1, 2}, {1, 3}};
+    cout << solution1319.makeConnected(6, connections) << endl;
+    connections = {{0, 1}, {0, 2}, {0, 3}, {1, 2}};
+    cout << solution1319.makeConnected(6, connections) << endl;
+    connections = {{0, 1}, {0, 2}, {3, 4}, {2, 3}};
+    cout << solution1319.makeConnected(5, connections) << endl;
+}
+
 #endif // !_LEETCODE_GRAPH_UNION_FIND_1319_H_

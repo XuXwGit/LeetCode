@@ -52,10 +52,12 @@ private:
 
     void merge(int x, int y)
     {
-        if (find(x) != find(y))
+        int px = find(x);
+        int py = find(y);
+        if (px != py)
         {
-            parents[find(x)] = find(y);
-            counts[find(y)] += counts[find(x)];
+            parents[px] = py;
+            counts[py] += counts[px];
         }
     }
 
@@ -88,14 +90,12 @@ public:
         }
 
         long long res = 0;
-        int curs = num;
         for (int i = 0; i < temps.size(); ++i)
         {
-            curs -= temps[i];
-            res += temps[i] * curs;
+            res += (long long)temps[i] * (num - temps[i]);
         }
 
-        return res;
+        return res / 2;
     }
 };
 
