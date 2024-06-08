@@ -3,6 +3,9 @@
 
 #include "include_std_c++.h"
 
+// The principle of inclusion-exclusion
+#include "inclusion-exclusion/LeetCode2928.h"
+
 #include "LeetCode204.h"
 #include "LeetCode1016.h"
 #include "LeetCode1017.h"
@@ -12,6 +15,9 @@
 
 void test_math(){
     cout << " ==== test math ==== " << endl;
+    cout << " ==== inclusion-exclusion principle ==== " << endl;
+    test2928();
+
     test204();
     test1016();
     test1017();

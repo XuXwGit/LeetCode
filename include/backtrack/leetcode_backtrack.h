@@ -12,6 +12,7 @@
 #include "LeetCode78.h"
 #include "LeetCode79.h"
 #include "LeetCode216.h"
+#include "LeetCode698.h"
 #include "LeetCode805.h"
 
 void test_backtrack(){
@@ -26,6 +27,7 @@ void test_backtrack(){
     test78();
     test79();
     test216();
+    test698();
 }
 
 #endif // !_LEETCODE_BACKTRACK_H_

@@ -17,50 +17,59 @@
 
 class Solution2976 {
 private:
-    void floyd(vector<vector<int>>& distance){
-        for(int k = 0; k<distance.size(); ++k){
-            for(int i = 0; i<distance.size(); ++i){
-                for(int j = 0; j<distance.size(); ++j){
+    void floyd(vector<vector<int>> &distance)
+    {
+        int n = distance.size();
+        for (int k = 0; k < n; ++k)
+        {
+            for (int i = 0; i < n; ++i)
+            {
+                if (i == k || distance[i][k] >= INT_MAX / 2)
+                {
+                    continue;
+                }
+                for (int j = 0; j < n; ++j)
+                {
+                    if (j == k || distance[k][j] >= INT_MAX / 2)
+                    {
+                        continue;
+                    }
                     distance[i][j] = min(distance[i][j], distance[i][k] + distance[k][j]);
                 }
             }
         }
     }
+
 public:
-    long long minimumCost(string source, string target, vector<char>& original, vector<char>& changed, vector<int>& cost) {
-        map<char, int> inedx_dic;
-        for(int i = 0; i<original.size(); ++i){
-            if(!inedx_dic.count(original[i])){
-                inedx_dic[original[i]] = inedx_dic.size();
-            }
+    long long minimumCost(string source, string target, vector<char> &original, vector<char> &changed, vector<int> &cost)
+    {
+        // build graph
+        vector<vector<int>> distance(26, vector<int>(26, INT_MAX / 2));
+        for (int i = 0; i < distance.size(); ++i)
+        {
+            distance[i][i] = 0;
         }
-        for(int i = 0; i<changed.size(); ++i){
-            if(!inedx_dic.count(changed[i])){
-                inedx_dic[changed[i]] = inedx_dic.size();
-            }
-        }
-        int n = inedx_dic.size();
-        vector<vector<int>> distance(n, vector<int>(n, INT_MAX/2));
-        for(int i = 0; i<original.size(); ++i){
-            int x = inedx_dic[original[i]];
-            int y = inedx_dic[changed[i]];
+        for (int i = 0; i < original.size(); ++i)
+        {
+            int x = original[i] - 'a';
+            int y = changed[i] - 'a';
             distance[x][y] = min(distance[x][y], cost[i]);
         }
 
         floyd(distance);
 
-        long long total_cost = 0;
-        for(int i = 0; i<source.size(); ++i){
-            if(source[i] == target[i]){
-                continue;
-            }
-            if(!inedx_dic.count(source[i]) || !inedx_dic.count(target[i]) || distance[inedx_dic[source[i]]][inedx_dic[target[i]]] >= INT_MAX/2){
+        long long res = 0ll;
+        for (int i = 0; i < source.size(); ++i)
+        {
+            int change_cost = distance[source[i] - 'a'][target[i] - 'a'];
+            if (change_cost >= INT_MAX / 2)
+            {
                 return -1;
             }
-            total_cost += distance[inedx_dic[source[i]]][inedx_dic[target[i]]];
+            res += change_cost;
         }
 
-        return total_cost;
+        return res;
     }
 };
 

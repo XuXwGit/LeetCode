@@ -13,7 +13,10 @@
 #include "trie/LeetCode208.h"
 #include "trie/LeetCode211.h"
 #include "trie/LeetCode212.h"
+#include "trie/LeetCode745.h"
+#include "trie/LeetCode1233.h"
 #include "trie/LeetCode1268.h"
+#include "trie/LeetCode1948.h"
 
 void test_tree(){
     // Binary Tree
@@ -27,7 +30,10 @@ void test_tree(){
     test208();
     test211();
     test212();
+    test745();
+    test1233();
     test1268();
+    test1948();
 }
 
 

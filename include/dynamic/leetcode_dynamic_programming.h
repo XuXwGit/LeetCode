@@ -36,7 +36,13 @@
 // network dp
 
 // knapsack problem
-#include "LeetCode377.h"
+#include "knapsack/01knapsack/LeetCode416.h"
+#include "knapsack/LeetCode279.h"
+#include "knapsack/LeetCode322.h"
+#include "knapsack/LeetCode377.h"
+#include "knapsack/LeetCode494.h"
+#include "knapsack/LeetCode518.h"
+#include "knapsack/LeetCode1449.h"
 
 // linear dp
 
@@ -53,6 +59,16 @@ void test_dynamic_programming(){
     test122();
     test188();
     test741();
+
+    cout << " ==== knapsack problem ====" << endl;
+
+    test279();
+    test322();
+    test377();
+    test416();
+    test494();
+    test518();
+    test1449();
 
     test1463();
     test2008();

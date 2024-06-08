@@ -9,14 +9,14 @@
 
 using namespace std;
 
-class Solution
+class Solution_HW_0417_03
 {
 private:
     vector<vector<int>> delay;
     vector<int> capacity;
 
 public:
-    Solution(vector<vector<int>> &delay, vector<int> &capacity)
+    Solution_HW_0417_03(vector<vector<int>> &delay, vector<int> &capacity)
         : delay(delay), capacity(capacity) {}
     vector<int> getpath(int k, int need)
     {
@@ -108,7 +108,7 @@ void test_0417_03()
         }
     }
 
-    Solution sol(delay, capacity);
+    Solution_HW_0417_03 sol(delay, capacity);
     vector<int> path = sol.getpath(k, need);
     for (auto x : path)
     {

@@ -15,54 +15,25 @@
 #include "leetcode_math.h"
 #include "test_sort.h"
 #include "examination.h"
-#include "LeetCode76.h"
-#include "LeetCode239.h"
-#include "LeetCode438.h"
-#include "LeetCode189.h"
-#include "LeetCode295.h"
-#include "LeetCode41.h"
-#include "LeetCode54.h"
-#include "LeetCode322.h"
-#include "LeetCode75.h"
-#include "LeetCode443.h"
-#include "LeetCode649.h"
-#include "LeetCode1017.h"
-#include "LeetCode2009.h"
 
 using namespace std;
 int main()
 {
-	test_dynamic_programming();
 	test_graph();
-	test_examination();
-	test_sliding_windows();
-	test_sort();
-	test_strings();
-	test_list();
-	test_backtrack();
-	test_greedy();
-	test_math();
-	test_search();
-	test_binary_search();
 	test_tree();
-	test_double_pointer();
-	test_stack();
-	test_prefixsum();
-	test2009();
-	test300();
-	test2300();
-	test649();
-	test443();
-	test75();
-	test322();
-	test4();
-	test54();
-	test84();
-	test394();
-	test41();
-	test295();
-	test912();
-	test189();
-	test76(); 
+	test_dynamic_programming();
+	// test_stack();
+	// test_math();
+	// test_strings();
+	// test_examination();
+	// test_sliding_windows();
+	// test_sort();
+	// test_list();
+	// test_backtrack();
+	// test_greedy();
+	// test_search();
+	// test_binary_search();
+	// test_double_pointer();
+	// test_prefixsum();
 	return 0;
 }

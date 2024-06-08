@@ -18,6 +18,11 @@
         "unordered_set": "cpp",
         "new": "cpp",
         "iterator": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "bitset": "cpp",
+        "initializer_list": "cpp",
+        "regex": "cpp",
+        "utility": "cpp",
+        "valarray": "cpp"
     },
 }
