@@ -30,6 +30,7 @@
 #include "union_find/LeetCode547.h"
 #include "union_find/LeetCode684.h"
 #include "union_find/LeetCode685.h"
+#include "union_find/LeetCode827.h"
 #include "union_find/LeetCode924.h"
 #include "union_find/LeetCode2316.h"
 #include "union_find/LeetCode2685.h"
@@ -90,6 +91,7 @@ void test_graph(){
     test547();
     test684();
     test685();
+    test827();
     test924UFS();
     test2316();
     test2685();
